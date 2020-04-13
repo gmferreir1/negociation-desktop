@@ -1,0 +1,100 @@
+{
+  "name": "sigem_desktop",
+  "version": "0.0.1",
+  "private": true,
+  "repository": "https://github.com/gmferreir1/negociation-desktop",
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "electron:build": "vue-cli-service electron:build",
+    "electron:serve": "vue-cli-service electron:serve",
+    "postinstall": "electron-builder install-app-deps",
+    "postuninstall": "electron-builder install-app-deps",
+    "electron:generate-icons": "electron-icon-builder --input=./public/icon.png --output=build --flatten"
+  },
+  "publish": {
+    "provider": "github"
+  },
+  "files": [
+    "dist/electron/**/*"
+  ],
+  "dmg": {
+    "contents": [
+      {
+        "x": 410,
+        "y": 150,
+        "type": "link",
+        "path": "/Applications"
+      },
+      {
+        "x": 130,
+        "y": 150,
+        "type": "file"
+      }
+    ]
+  },
+  "mac": {
+    "icon": "build/icons/icon.icns"
+  },
+  "win": {
+    "icon": "build/icons/256x256.png"
+  },
+  "linux": {
+    "icon": "build/icons"
+  },
+  "main": "background.js",
+  "dependencies": {
+    "@fullcalendar/core": "^4.3.1",
+    "@fullcalendar/daygrid": "^4.3.0",
+    "@fullcalendar/vue": "^4.3.1",
+    "axios": "^0.19.0",
+    "bootstrap": "^3.4",
+    "bootstrap-colorpicker": "^2.5.3",
+    "bootstrap-datepicker": "^1.8",
+    "bootstrap-daterangepicker": "^2.1.25",
+    "bootstrap-select": "^1.13.12",
+    "bootstrap-slider": "^9.10.0",
+    "collect.js": "^4.18.1",
+    "core-js": "^3.3.2",
+    "electron-icon-builder": "^1.0.2",
+    "electron-log": "^4.1.1",
+    "electron-squirrel-startup": "^1.0.0",
+    "electron-updater": "^4.2.5",
+    "font-awesome": "^4.7",
+    "highcharts": "7.2.1",
+    "ionicons": "^3",
+    "jquery": "^3.4.1",
+    "jquery-ui": "^1.12.1",
+    "lodash": "^4.17.15",
+    "moment": "^2.24.0",
+    "numeral": "^2.0.6",
+    "simple-vue-validator": "^0.16.0",
+    "sweetalert": "^2.1.2",
+    "toastr": "^2.1.4",
+    "v-money": "^0.8.1",
+    "vue": "^2.6.10",
+    "vue-router": "^3.1.3",
+    "vue-the-mask": "^0.11.1",
+    "vue2-editor": "^2.10.2",
+    "vuedraggable": "^2.23.2",
+    "vuejs-paginate": "^2.1.0",
+    "vuex": "^3.0.1"
+  },
+  "devDependencies": {
+    "@voerro/vue-tagsinput": "^2.1.0",
+    "@vue/cli-plugin-babel": "^4.0.0",
+    "@vue/cli-service": "^4.0.0",
+    "electron": "^6.0.0",
+    "vue-cli-plugin-electron-builder": "^1.4.6",
+    "vue-template-compiler": "^2.6.10"
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ]
+}
