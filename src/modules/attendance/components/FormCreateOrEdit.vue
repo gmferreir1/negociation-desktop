@@ -192,7 +192,7 @@
     </div>
 
     <!-- component historic -->
-    <historic :dataAttendance="form" v-if="form.id" />
+    <historic :dataAttendance="form" v-show="form.id" />
     <!-- / component historic -->
   </div>
 </template>

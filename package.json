@@ -1,6 +1,6 @@
 {
   "name": "sigem_desktop",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": true,
   "repository": "https://github.com/gmferreir1/negociation-desktop",
   "scripts": {
