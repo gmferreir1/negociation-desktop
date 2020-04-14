@@ -11,7 +11,11 @@
 
       <!-- Content Wrapper. Contains page content -->
 
-      <div class="content-wrapper" :style="styleObject, styleContainer">
+      <div
+        class="content-wrapper"
+        :class="{grad: $route.name === 'auth'}"
+        :style="styleObject, styleContainer"
+      >
         <!-- Main content -->
         <section class="content container-fluid">
           <!--------------------------
@@ -107,5 +111,9 @@ export default {
 .fixed .content-wrapper,
 .fixed .right-side {
   padding-top: 35px !important;
+}
+
+.grad {
+  background: linear-gradient(to right, #263238, #302b63, #263238);
 }
 </style>

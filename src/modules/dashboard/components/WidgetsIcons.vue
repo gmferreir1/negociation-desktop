@@ -42,6 +42,12 @@ export default {
         attendance: 0,
         delivery_notification: 0,
         contract_distribution: 0
+      },
+      select: {
+        users: []
+      },
+      form: {
+        responsibles_solicitation: ""
       }
     };
   },

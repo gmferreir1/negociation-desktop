@@ -11,18 +11,7 @@
 
 <script>
 export default {
-  name: "MainFooter",
-  props: ["checkUpdate"],
-  watch: {
-    checkUpdate() {
-      /*
-
-      if (window.ipcRenderer) {
-      window.ipcRenderer.send("checkUpdate");
-    }
-    */
-    }
-  }
+  name: "MainFooter"
 };
 </script>
 
@@ -35,5 +24,11 @@ export default {
 
   padding-top: 0px !important;
   padding-bottom: 0px !important;
+}
+
+footer {
+  position: fixed;
+  width: 86.2%;
+  bottom: 0;
 }
 </style>

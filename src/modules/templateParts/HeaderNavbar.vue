@@ -39,7 +39,7 @@
                   <small>Registrado desde {{ data_user_logged.created_at }}</small>
                 </p>
               </li>
-              <!-- Menu Body -->
+              <!-- Menu Body 
               <li class="user-body">
                 <div class="row">
                   <div class="col-xs-12 text-center">
@@ -49,8 +49,8 @@
                     </router-link>
                   </div>
                 </div>
-                <!-- /.row -->
               </li>
+              -->
               <!-- Menu Footer-->
               <li class="user-footer">
                 <div class="pull-left">
@@ -123,7 +123,8 @@ export default {
 <style scoped>
 .skin-purple .main-header .navbar {
   /*background-color: #e98531 !important; */
-  background: linear-gradient(to right, #583c25, #918072) !important;
+  /* background: linear-gradient(to right, #583c25, #918072) !important; */
+  background: linear-gradient(to right, #cccccc, #263238, #263238);
 }
 
 .main-header .navbar {

@@ -24,10 +24,10 @@
             <div class="form-group">
               <label>Situação</label>
               <multi-select
-                id="situation"
-                @values="values => form.situation = values"
-                :selectData="select.situation"
-                :setData="{ data: form.situation }"
+                id="responsible_id_panel"
+                @values="values => form.responsibles_solicitation = values"
+                :selectData="select.users"
+                :setData="{ data: form.responsibles_solicitation }"
                 :multiple="true"
               />
             </div>
@@ -161,7 +161,7 @@ export default {
       this.loading_data = false;
     }, 300);
 
-    //this.search();
+    this.search();
   }
 };
 </script>

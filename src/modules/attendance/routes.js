@@ -23,6 +23,11 @@ export default [
                 component: CreateOrEdit
             },
             {
+                path: "edit/:id",
+                name: "attendance_edit",
+                component: CreateOrEdit
+            },
+            {
                 path: "update-database",
                 name: "update_db",
                 component: UpdateDB

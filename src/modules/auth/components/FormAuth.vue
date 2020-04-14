@@ -3,7 +3,7 @@
     <div class="container">
       <div
         id="loginbox"
-        style="margin-top:50px;"
+        style="margin-top:20%;"
         class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2"
       >
         <div class="panel panel-info">
@@ -199,3 +199,16 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+.panel-info > .panel-heading {
+  color: #000000;
+  background-color: #e98531 !important;
+  border-color: #e98531 !important;
+  text-transform: uppercase;
+}
+
+.panel {
+  border: none !important;
+}
+</style>

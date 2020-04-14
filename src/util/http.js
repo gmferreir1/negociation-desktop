@@ -5,7 +5,7 @@ const url = window.location.host.split(":")[0];
 window.URL_API =
   process.env.NODE_ENV === "development"
     ? `http://${url}:3333`
-    : `http://192.168.0.100:3333`;
+    : `http://10.0.10.112:3333`;
 
 const client = axios.create({
   baseURL: URL_API

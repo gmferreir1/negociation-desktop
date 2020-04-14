@@ -46,12 +46,15 @@
           <div class="table-responsive tableFixHead" v-if="!loading && data_list.data.length">
             <table class="table table-hover">
               <tr>
-                <th class="text-center">
-                  <a href="#" @click.prevent="sort('id', toggle_sort === 'asc' ? 'desc' : 'asc' )">
-                    <span v-if="data_sort.sort_by === 'id' ">
+                <th class="text-left">
+                  <a
+                    href="#"
+                    @click.prevent="sort('contract', toggle_sort === 'asc' ? 'desc' : 'asc' )"
+                  >
+                    <span v-if="data_sort.sort_by === 'contract' ">
                       <i
                         class="fa"
-                        v-if="data_sort.sort_by === 'id'"
+                        v-if="data_sort.sort_by === 'contract'"
                         :class="{'fa-sort-amount-desc': data_sort.sort_order === 'desc' , 'fa-sort-amount-asc': data_sort.sort_order === 'asc'}"
                         aria-hidden="true"
                       ></i>
@@ -59,29 +62,38 @@
                     <span v-else>
                       <i class="fa fa-sort" aria-hidden="true"></i>
                     </span>
-                    #
+                    Contrato
                   </a>
                 </th>
-
-                <th>contrato</th>
-                <th>Solictante</th>
-                <th>Tipo Solicitação</th>
-                <th>Atendimento</th>
-                <th>Situação</th>
-                <th>Responsável</th>
+                <th class="text-left">Inquilino</th>
+                <th class="text-right">Valor</th>
+                <th class="text-center">Dia Vencimento</th>
+                <th class="text-left">Destinação</th>
+                <th class="text-left">Ramo Atividade</th>
+                <th class="text-left">Forma Garantia</th>
+                <th class="text-right">Valor Garantia</th>
+                <th class="text-left">Responsável</th>
 
                 <th class="text-center">-</th>
               </tr>
               <tr v-for="(list, index) in data_list.data" :key="index">
-                <td class="text-center">{{ list.id }}</td>
-                <td class="text-left"></td>
-                <td class="text-left"></td>
-                <td class="text-left"></td>
-                <td class="text-left"></td>
-                <td class="text-left"></td>
-                <td class="text-left"></td>
+                <td class="text-left">{{ list.contract }}</td>
+                <td class="text-left">{{ list.tenant_name }}</td>
+                <td class="text-right">{{ moneyFormat(list.value) }}</td>
+                <td class="text-center">{{ list.due_day }}</td>
+                <td class="text-left">{{ !list.type_contract ? " - " : list.type_contract }}</td>
+                <td class="text-left">{{!list.type_activity ? " - " : list.type_activity }}</td>
+                <td class="text-left">{{!list.type_warranty ? " - " : list.type_warranty }}</td>
+                <td
+                  class="text-right"
+                >{{!list.value_warranty ? " - " : moneyFormat(list.value_warranty) }}</td>
+                <td class="text-left">{{ list.responsibleData ? list.responsibleData.name : " - " }}</td>
                 <td class="text-center">
-                  <router-link class="btn btn-sm btn-default" :to="{name: '', params: {id: 1 } }">
+                  <router-link
+                    v-if="list.id"
+                    class="btn btn-sm btn-default"
+                    :to="{name: 'attendance_edit', params: {id: list.id } }"
+                  >
                     <i class="fa fa-pencil"></i>
                   </router-link>
                 </td>
@@ -147,10 +159,11 @@ export default {
       };
 
       http
-        .get("reserve", queryParams)
+        .get("attendance", queryParams)
         .then(result => {
           this.data_list = result.data.list;
-          this.value_total = result.data.value_total;
+          //this.value_total = result.data.value_total;
+          this.sort("contract", "asc");
         })
         .catch(err => {})
         .finally(() => {
