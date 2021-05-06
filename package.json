@@ -34,7 +34,7 @@
     "electron-squirrel-startup": "^1.0.0",
     "electron-updater": "^4.2.5",
     "font-awesome": "^4.7",
-    "highcharts": "7.2.1",
+    "highcharts": "9.0.0",
     "ionicons": "^3",
     "jquery": "^3.4.1",
     "jquery-ui": "^1.12.1",
